@@ -1,4 +1,5 @@
 import UseState from './UseState'
+import UseEffect from './UseEffect'
 
 const Main = () => {
 
@@ -7,6 +8,7 @@ const Main = () => {
   return (
     <>
       <UseState />
+      <UseEffect />
     </>
   )
 }
