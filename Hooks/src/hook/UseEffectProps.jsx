@@ -4,6 +4,7 @@ import UseEffectCounter from "./UseEffectCounter";
 const UseEffectProps = () => {
     const [counter, setCounter] = useState(0)
     const [datas, setDatas] = useState(0)
+    const [text, setText] = useState("")
 
     useEffect(() => {
         handleFunction();
@@ -12,6 +13,14 @@ const UseEffectProps = () => {
     useEffect(() => {
         handleData()
     }, [datas])
+
+    useEffect(() => {
+      console.log("counter updated")
+    }, [counter])
+
+    useEffect(() => {
+      console.log(`User Typed : ${text}`)
+    }, [text])
 
   function handleFunction() {
     console.log("UseEffectCounter called");
@@ -25,6 +34,8 @@ const UseEffectProps = () => {
       <UseEffectCounter counter = {counter} datas = {datas} />
       <button onClick={() => setCounter(counter + 1)}>Count</button>
       <button onClick={() => setDatas(datas + 1)}>Data </button>
+      <p>user type : {text}</p>
+      <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
     </>
   );
 };
