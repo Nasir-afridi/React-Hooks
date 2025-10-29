@@ -22,6 +22,12 @@ const UseEffectProps = () => {
       console.log(`User Typed : ${text}`)
     }, [text])
 
+    useEffect(() => {
+      console.log("component Mounted")
+
+      return () => {console.log("component unmounted")}
+    }, [])
+
   function handleFunction() {
     console.log("UseEffectCounter called");
   }
