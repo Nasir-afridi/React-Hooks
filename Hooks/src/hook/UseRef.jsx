@@ -9,8 +9,6 @@ const UseRef = () => {
     inputField.current.focus();
     inputField.current.style.color='red'
     inputField.current.placeholder='whats new boy'
-
-    
   }
   return (
     <>
